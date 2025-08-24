@@ -1,0 +1,7 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "echo 'No build needed for data files'",
+    "startCommand": "echo 'Data loading complete' && sleep 3600"
+  }
+}

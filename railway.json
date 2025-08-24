@@ -1,7 +1,0 @@
-{
-  "$schema": "https://railway.app/railway.schema.json",
-  "build": {
-    "builder": "nixpacks",
-    "buildCommand": "echo 'This is a monorepo, please configure individual services'"
-  }
-}

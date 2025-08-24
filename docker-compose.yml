@@ -1,0 +1,44 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.14.3
+    container_name: es-single
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports: 
+      - "9200:9200"
+
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+
+  cloud-gateway:
+    build: ./cloud-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SERVER_PORT=8080
+      - GATEWAY_CORS_ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+    depends_on: 
+      - eureka-server
+
+  buscador-service:
+    build: ./buscador-service
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - ELASTICSEARCH_URIS=http://elasticsearch:9200
+    depends_on: 
+      - elasticsearch
+      - eureka-server
+
+  operador-service:
+    build: ./operador-service
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - GATEWAY_BASE_URL=http://cloud-gateway:8080
+    depends_on:
+      - eureka-server
+      - cloud-gateway

@@ -1,0 +1,12 @@
+{
+  "settings": { "analysis": { "analyzer": { "folding_analyzer": { "tokenizer": "standard", "filter": ["lowercase","asciifolding"] } } } },
+  "mappings": { "properties": {
+    "id": { "type": "keyword" },
+    "title": { "type": "search_as_you_type", "analyzer": "folding_analyzer" },
+    "description": { "type": "text", "analyzer": "folding_analyzer" },
+    "category": { "type": "keyword" },
+    "price": { "type": "double" },
+    "tags": { "type": "keyword" },
+    "createdAt": { "type": "date" }
+  } }
+}

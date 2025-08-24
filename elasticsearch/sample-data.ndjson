@@ -1,0 +1,6 @@
+{ "index": { "_index": "items", "_id": "1" } }
+{ "id": "1", "title": "Star Wars: A New Hope", "description": "Classic space opera film.", "category": "movies", "price": 3.99, "tags": ["sci-fi","classic"], "createdAt": "2020-01-01T00:00:00Z" }
+{ "index": { "_index": "items", "_id": "2" } }
+{ "id": "2", "title": "Stardew Valley", "description": "Farming RPG game.", "category": "games", "price": 14.99, "tags": ["indie","rpg"], "createdAt": "2021-05-10T00:00:00Z" }
+{ "index": { "_index": "items", "_id": "3" } }
+{ "id": "3", "title": "Interstellar", "description": "Epic science fiction film about space and time.", "category": "movies", "price": 4.99, "tags": ["sci-fi","nolan"], "createdAt": "2019-11-07T00:00:00Z" }

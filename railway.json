@@ -3,10 +3,10 @@
   "build": {
     "builder": "nixpacks",
     "buildCommand": "apt-get update && apt-get install -y curl jq && chmod +x load-data.sh",
-    "startCommand": "./load-data.sh"
+    "startCommand": "./elasticsearch/load-data.sh"
   },
   "deploy": {
-    "startCommand": "./load-data.sh",
+    "startCommand": "./elasticsearch/load-data.sh",
     "restartPolicyType": "ON_FAILURE",
     "numReplicas": 1
   }

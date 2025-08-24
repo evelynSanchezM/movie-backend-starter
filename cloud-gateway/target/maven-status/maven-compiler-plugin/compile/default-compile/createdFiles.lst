@@ -1,2 +1,2 @@
-com/example/gateway/CloudGatewayApplication.class
-com/example/gateway/config/GatewayCorsConfig.class
+com/example/cloudgateway/config/GatewayCorsConfig.class
+com/example/cloudgateway/CloudGatewayApplication.class
